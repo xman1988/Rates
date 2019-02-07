@@ -9,7 +9,6 @@ use app\models\Reader;
 use app\models\Selector;
 
 
-
 /**
  * Class RateController Класс извлекает курс валют из сторонних источников(периодичность опроса источника 10 сек)
  * и выводит на страницу сайта(site/index).
@@ -53,7 +52,7 @@ class RateController extends AppController
             $this->rate = Reader::readXML($xmlObject);
 
 
-        }elseif(isset($url['errorMessage']) || isset($url['errorMessage'])){
+        } elseif (isset($url['errorMessage']) || isset($url['errorMessage'])) {
             $error['validateURL'] = $url['errorMessage'];
             $error['isData'] = $url['errorMessage'];
             $this->rate = 'Нет данных';
@@ -63,11 +62,11 @@ class RateController extends AppController
         /**
          * Задается MIME-тип ответа.
          */
-           \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+        \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
 
         return ['rate' => $this->rate];
 
     }
 
-    
+
 }

@@ -18,11 +18,12 @@ class Reader
      * Метод выполняет читает переданный ресурс в формате JSON, выбирает курс валюты по ключу 'EUR' и возвращает результат.
      * @return float содержит значение курса Евро/Рубль
      */
-    public static function readJSON($jsonObject){
-        foreach($jsonObject as $item){
-            if(is_object($item) == true){
-                foreach ($item as $key => $value){
-                    if($key == 'EUR'){
+    public static function readJSON($jsonObject)
+    {
+        foreach ($jsonObject as $item) {
+            if (is_object($item) == true) {
+                foreach ($item as $key => $value) {
+                    if ($key == 'EUR') {
                         $value = get_object_vars($value);
                         return $value['Value'];
                     }
@@ -35,10 +36,11 @@ class Reader
      * Метод выполняет читает переданный ресурс в формате XML, выбирает курс валюты по ключу 'RUB' и возвращает результат.
      * @return object SimpleXMLElement содержит значение курса Евро/Рубль
      */
-    public static function readXML($sxmlObject){
+    public static function readXML($sxmlObject)
+    {
         $arr = $sxmlObject->Cube->Cube->Cube;
-        foreach ($arr as $value){
-            if($value['currency'] == 'RUB'){
+        foreach ($arr as $value) {
+            if ($value['currency'] == 'RUB') {
                 return $value['rate'];
             }
         }
