@@ -7,7 +7,6 @@ $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
-//    'defaultRoute' => 'rate/index',
     'language' => 'ru',
     'aliases' => [
         '@bower' => '@vendor/bower-asset',

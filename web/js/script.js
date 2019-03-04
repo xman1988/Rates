@@ -5,7 +5,7 @@ window.onload = function() {
 
 function rateRequest() {
     $.ajax({
-        'url': "../rate/index",
+        'url': "../web/rate/index",
         cache : 'false',
         dataType : 'json'
     }).done(function (data){

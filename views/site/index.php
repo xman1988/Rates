@@ -1,6 +1,6 @@
 <?php
 // JS файл с AJAX запросом к скрипту (с интервалом 10сек)
-$this->registerJsFile('../js/script.js');
+$this->registerJsFile('../web/js/script.js');
 $this->title = 'Курс Евро/Рубль';
 ?>
 <div class="site-index">
